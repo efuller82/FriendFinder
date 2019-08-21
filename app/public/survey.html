@@ -289,11 +289,19 @@
     $('#submitForm').click(function () {
         event.preventDefault();
         $('form input[type="radio"]:checked').each(function () {
-            answersArray.push($(this).val());
+            answersArray.push($(this).val())
         })
-        console.log(answersArray);
-    })
+        var newPerson = {
+            name: "New Person",
+            answers: answersArray
+        };
+        console.log(newPerson);
+        var currentURL = window.location.origin;
 
+        $.post(currentURL + '/api/friends', newPerson, function (data) {
+            alert('maybe');
+        });
+    })
 
 </script>
 
