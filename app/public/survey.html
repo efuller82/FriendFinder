@@ -15,15 +15,22 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4">Takin' the Love Quiz!</h1>
-            <p class="lead">Find out your snack match now!</p>
-            <p>For each question, answer with a response of 1-5, 1 meaning you strongly disagree, and 5 meaning you
+            <h1 class="display-4">Take the Quiz</h1>
+            <p class="lead">For each question, answer with a response of 1-5, 1 meaning you strongly disagree, and 5
+                meaning you
                 strongly agree.</p>
-            <a class="btn btn-danger btn-lg" href="/" role='button'>Home</a>
 
         </div>
         <div class="questions">
             <form id="theForm">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label>Image URL:</label>
+                    <input type="text" class="form-control" id="photo">
+                </div>
                 <div class="question">
                     <h3><strong>Q.1.</strong></h3>
                     <h4>On a first date, Super China Buffet is the best place to take someone.</h4>
@@ -74,7 +81,7 @@
                 </div>
                 <div class="question">
                     <h3><strong>Q.3.</strong></h3>
-                    <h4>Donald Trump is a wonderful human being.</h4>
+                    <h4>I would like to go to the Kite Festival.</h4>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="question_3" id="inlineRadio11" value="1">
                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -98,7 +105,7 @@
                 </div>
                 <div class="question">
                     <h3><strong>Q.4.</strong></h3>
-                    <h4>My idea of a great date is shooting dice and drinking 40s.</h4>
+                    <h4>You like to shoot dice on the sidewalk.</h4>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="question_4" id="inlineRadio16" value="1">
                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -242,7 +249,7 @@
                 </div>
                 <div class="question">
                     <h3><strong>Q.10.</strong></h3>
-                    <h4>Waiters/Waitresses should just get a new job if they want to complain about not getting tipped.
+                    <h4>You are easily offended.
                     </h4>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="question_10" id="inlineRadio46" value="1">
@@ -306,27 +313,31 @@
         $('form input[type="radio"]:checked').each(function () {
             answersArray.push($(this).val())
         })
+
+        if ($('#name').val().trim() == '') {
+            alert('Please fill out your name.');
+        }
+        if ($('#photo').val().trim() == '') {
+            alert('Please add a photo.');
+        }
         var newPerson = {
-            name: "New Person",
-            answers: answersArray
+            name: $('#name').val().trim(),
+            image: $('#photo').val().trim(),
+            scores: answersArray
         };
-        // let's try popping modal here with first person in friendsArr[0];
-        //trying to toggle modal
         $.ajax({
             url: "/api/friends", success: function (result) {
-                console.log(result[0].name);
-                $('#celeb-name').append(result[6].name);
-                $('#celeb-pic').append(result[6].photo);
+                $('#celeb-name').append(result[4].name);
+                $('#celeb-pic').append('<img src=' + result[7].photo + '>');
             }
         });
-
+        // toggles the modal
         $('#finder-result').modal('toggle')
-        console.log(newPerson);
 
         var currentURL = window.location.origin;
 
         $.post(currentURL + '/api/friends', newPerson, function (data) {
-            // logic for finding best match
+            console.log(newPerson.scores);
         });
     })
 

@@ -15,3 +15,22 @@ module.exports = function (app) {
         res.json(true);
     })
 }
+
+var newbie = {
+    name: 'Eric',
+    scores: [1, 3, 1, 5, 5, 3, 4, 4, 2, 1]
+}
+diffArray = [];
+diffArraySum = 0;
+
+// loop through each person's scores comparing them with newbie;
+for (var i = 0; i < friendsData.length; i++) {
+    diffArray.push(Math.abs(newbie.scores[i] - friendsData[0].scores[i]));
+}
+for (var j = 0; j < diffArray.length; j++) {
+    diffArraySum += diffArray[j];
+}
+
+// loop through completed scores and find which one has the smallest difference;
+console.log(diffArray);
+console.log(diffArraySum);

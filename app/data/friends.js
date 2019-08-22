@@ -6,7 +6,7 @@ var friendsArr = [
     },
     {
         name: 'Steve Buscemi',
-        photo: 'https://i.ytimg.com/vi/VDLMTx6S8Wk/maxresdefault.jpg',
+        photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Steve_Buscemi_2009_portrait.jpg/170px-Steve_Buscemi_2009_portrait.jpg',
         scores: [2, 3, 5, 3, 2, 4, 1, 2, 4, 3]
     },
     {
@@ -20,8 +20,8 @@ var friendsArr = [
         scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     },
     {
-        name: "Rosie O//'Donnell",
-        photo: 'https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F378842%252Fd831bed8-8271-485b-bc56-0f70fc2bc478.png%252Ffull-fit-in__950x534.png?signature=x0v6_il6JyoDR3S1NIX8nMs4o8g=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com',
+        name: "Rosie O'Donnell",
+        photo: 'https://www.thewrap.com/wp-content/uploads/2017/09/SteveBannon2.jpg',
         scores: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
     },
     {
@@ -36,7 +36,7 @@ var friendsArr = [
     },
     {
         name: 'The Penguin',
-        photo: 'http://www.mwctoys.com/images2/review_cobblepot_1.jpg',
+        photo: 'https://i.ytimg.com/vi/AXIijMuL5vE/hqdefault.jpg',
         scores: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
     },
     {
