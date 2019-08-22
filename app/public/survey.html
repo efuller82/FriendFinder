@@ -273,12 +273,13 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3 class="modal-title">We have found your one true love!</h3>
-                        <div class="modal-body">
-                            <h5 id="celeb-name"></h5>
-                            <div id="celeb-pic"></div>
-                        </div>
+                        <h3 class="modal-title">Your new love IS...</h3>
                     </div>
+                    <div class="modal-body">
+                        <h5 id="celeb-name"></h5>
+                        <div id="celeb-pic"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -311,13 +312,21 @@
         };
         // let's try popping modal here with first person in friendsArr[0];
         //trying to toggle modal
+        $.ajax({
+            url: "/api/friends", success: function (result) {
+                console.log(result[0].name);
+                $('#celeb-name').append(result[6].name);
+                $('#celeb-pic').append(result[6].photo);
+            }
+        });
+
         $('#finder-result').modal('toggle')
         console.log(newPerson);
+
         var currentURL = window.location.origin;
 
         $.post(currentURL + '/api/friends', newPerson, function (data) {
             // logic for finding best match
-            alert('maybe');
         });
     })
 
