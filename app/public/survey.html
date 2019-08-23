@@ -323,14 +323,9 @@
         var newPerson = {
             name: $('#name').val().trim(),
             image: $('#photo').val().trim(),
-            scores: answersArray
+            "scores": answersArray
         };
-        $.ajax({
-            url: "/api/friends", success: function (result) {
-                $('#celeb-name').append(result[4].name);
-                $('#celeb-pic').append('<img src=' + result[7].photo + '>');
-            }
-        });
+
         // toggles the modal
         $('#finder-result').modal('toggle')
 
@@ -338,8 +333,15 @@
 
         $.post(currentURL + '/api/friends', newPerson, function (data) {
             console.log(newPerson.scores);
+            $('#celeb-name').append(data.name);
+            $('#celeb-pic').append('<img src=' + data.photo + '>');
+
         });
     })
+    // $.ajax({
+    //         url: "/api/friends", success: function (result) {
+    //         }
+    //     });
 
 </script>
 

@@ -3,6 +3,7 @@ var friendsArr = [
         name: 'Roseanne',
         photo: 'https://www.thewrap.com/wp-content/uploads/2018/05/rose-1.jpg',
         scores: [5, 3, 2, 3, 3, 4, 3, 3, 2, 3]
+
     },
     {
         name: 'Steve Buscemi',
