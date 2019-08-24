@@ -16,11 +16,12 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Take the Quiz</h1>
-            <p class="lead">For each question, answer with a response of 1-5, 1 meaning you strongly disagree, and 5
-                meaning you
-                strongly agree.</p>
+
 
         </div>
+        <h2> For each question, choose an answer between 1 and 5, 1 meaning you strongly disagree, and 5
+            meaning you
+            strongly agree.</h2>
         <div class="questions">
             <form id="theForm">
                 <div class="form-group">
@@ -129,7 +130,8 @@
                 </div>
                 <div class="question">
                     <h3><strong>Q.5.</strong></h3>
-                    <h4>You will usually see me driving down the road with a large turkey leg, covered in mustard.</h4>
+                    <h4>You will usually see me driving down the road with a large turkey leg, covered in mustard.
+                    </h4>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="question_5" id="inlineRadio21" value="1">
                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -301,10 +303,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <!-- my js file -->
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 <script type="text/javascript">
-
     //Here's where we handle the form data
     var answersArray = [];
     var answers;
@@ -338,11 +342,6 @@
 
         });
     })
-    // $.ajax({
-    //         url: "/api/friends", success: function (result) {
-    //         }
-    //     });
-
 </script>
 
 </html>
