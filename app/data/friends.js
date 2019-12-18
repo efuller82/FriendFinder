@@ -27,7 +27,7 @@ var friendsArr = [
     },
     {
         name: 'Mr. Bean',
-        photo: 'https://img.izismile.com/img/img4/20110919/640/famous_actors_who_got_hit_with_the_ugly_stick_640_19.jpg',
+        photo: 'https://i.pinimg.com/originals/92/bb/bc/92bbbc8b98a24e6cec57afc00cd1e8a3.jpg',
         scores: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
     },
     {
